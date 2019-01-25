@@ -11,3 +11,17 @@
   The frequency of values must be the same
 */
 
+// Common solution (Time Complexity (N^2))
+function same(arr1, arr2) {
+  if(arr1.length !== arr2.length) {
+    return false;
+  }
+  for(let i = 0; arr1.length; i++){
+    let correctIndex = arr2.indexOf(arr1[i] ** 2)
+    if(correctIndex === -1) {
+      return false;
+    }
+    arr2.splice(correctIndex, 1)
+  }
+  return true
+}
